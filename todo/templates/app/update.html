@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends 'app/base.html' %}
+    {% block content %}
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Page</title>
+</head>
+<body>
+    <div class="container mt-5">
+    <div class="text-center bg-info"><h3>Update ToDo</h3></div>
+    <form method = "POST">
+    <div class="table">
+        <table>
+        <thead>
+            <th>Title</th>
+            <th>Status</th>
+            <th>Priority</th>
+        </thead>
+        <tr>
+            <td><input type="text" name = "title" value="{{todo.title}}"></td>
+            <td><input type="text" name = "status" value="{{todo.status}}"></td>
+            <td><input type="text" name = "priority" value="{{todo.priority}}"></td>
+            {% csrf_token %}
+            <td><input class="btn btn-warning" type="submit" value="update"> </td>
+            <td><a href="/"><input class="btn btn-primary" type="button" value="Cancel"></a> </td>
+
+        </tr>
+    </table>
+</form>
+ </div>
+</div>
+</body>
+{% endblock %}
+</html>
